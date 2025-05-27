@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Bootstrap demo</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style1.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+  </head>
+  <body>
+    <div class="todo-list-container">
+    <header>
+      <nav class="navbar">
+        <div class="title d-flex text-white">
+          <div class="listIcon">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="30"
+              height="30"
+              fill="currentColor"
+              class="bi bi-grid-3x3-gap-fill"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M1 2a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1zm5 0a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1zm5 0a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1zM1 7a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1zm5 0a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1zm5 0a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1zM1 12a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1zm5 0a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1zm5 0a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1z"
+              />
+            </svg>
+          </div>
+          <div class="name ms-2">
+            <h3>TO DO</h3>
+          </div>
+        </div>
+        <div class="serachbar bg-white d-flex justify-content-center">
+          <div class="searchIcon">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              fill="black"
+              class="bi bi-search"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"
+              />
+            </svg>
+          </div>
+          <div class="inputbar">
+            <input
+              type="search"
+              class="form-control"
+              placeholder="Search your task /Events . . . ."
+              oninput="search()"
+              id="srhholder"
+              title="search "
+            />
+          </div>
+        </div>
+        <div class="icons">
+          <svg
+            class="me-2"
+            xmlns="http://www.w3.org/2000/svg"
+            width="20"
+            height="20"
+            fill="white"
+            class="bi bi-gear"
+            viewBox="0 0 16 16"
+            title="settings"
+          >
+            <path
+              d="M8 4.754a3.246 3.246 0 1 0 0 6.492 3.246 3.246 0 0 0 0-6.492M5.754 8a2.246 2.246 0 1 1 4.492 0 2.246 2.246 0 0 1-4.492 0"
+            />
+            <path
+              d="M9.796 1.343c-.527-1.79-3.065-1.79-3.592 0l-.094.319a.873.873 0 0 1-1.255.52l-.292-.16c-1.64-.892-3.433.902-2.54 2.541l.159.292a.873.873 0 0 1-.52 1.255l-.319.094c-1.79.527-1.79 3.065 0 3.592l.319.094a.873.873 0 0 1 .52 1.255l-.16.292c-.892 1.64.901 3.434 2.541 2.54l.292-.159a.873.873 0 0 1 1.255.52l.094.319c.527 1.79 3.065 1.79 3.592 0l.094-.319a.873.873 0 0 1 1.255-.52l.292.16c1.64.893 3.434-.902 2.54-2.541l-.159-.292a.873.873 0 0 1 .52-1.255l.319-.094c1.79-.527 1.79-3.065 0-3.592l-.319-.094a.873.873 0 0 1-.52-1.255l.16-.292c.893-1.64-.902-3.433-2.541-2.54l-.292.159a.873.873 0 0 1-1.255-.52zm-2.633.283c.246-.835 1.428-.835 1.674 0l.094.319a1.873 1.873 0 0 0 2.693 1.115l.291-.16c.764-.415 1.6.42 1.184 1.185l-.159.292a1.873 1.873 0 0 0 1.116 2.692l.318.094c.835.246.835 1.428 0 1.674l-.319.094a1.873 1.873 0 0 0-1.115 2.693l.16.291c.415.764-.42 1.6-1.185 1.184l-.291-.159a1.873 1.873 0 0 0-2.693 1.116l-.094.318c-.246.835-1.428.835-1.674 0l-.094-.319a1.873 1.873 0 0 0-2.692-1.115l-.292.16c-.764.415-1.6-.42-1.184-1.185l.159-.291A1.873 1.873 0 0 0 1.945 8.93l-.319-.094c-.835-.246-.835-1.428 0-1.674l.319-.094A1.873 1.873 0 0 0 3.06 4.377l-.16-.292c-.415-.764.42-1.6 1.185-1.184l.292.159a1.873 1.873 0 0 0 2.692-1.115z"
+            />
+          </svg>
+          <svg
+            class="me-2"
+            xmlns="http://www.w3.org/2000/svg"
+            width="20"
+            height="20"
+            fill="white"
+            class="bi bi-person-circle"
+            viewBox="0 0 16 16"
+          >
+            <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0" />
+            <path
+              fill-rule="evenodd"
+              d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1"
+            />
+          </svg>
+        </div>
+      </nav>
+    </header>
+
+    <main id="parent" >
+      <div id="menu">
+        <svg
+          data-bs-toggle="offcanvas"
+          data-bs-target="#staticBackdrop"
+          aria-controls="staticBackdrop"
+          xmlns="http://www.w3.org/2000/svg"
+          width="40"
+          height="40"
+          fill="blue"
+          class="bi bi-list"
+          viewBox="0 0 16 16"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"
+          />
+        </svg>
+        <div
+          class="offcanvas offcanvas-start"
+          data-bs-backdrop="static"
+          tabindex="-1"
+          id="staticBackdrop"
+          aria-labelledby="staticBackdropLabel"
+        >
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="staticBackdropLabel">Your List</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="offcanvas"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="offcanvas-body">
+                        <h5 > No Of Tasks</h5>
+            <div class="live d-flex">
+              <div class="task  " style="color: orange;">Total
+                  <div class="circle " id="total" style="font-weight: 800; " ondblclick="circle3()"> </div>
+              </div>
+              <div class="task "  style="color: green;">Finished
+                  <div class="circle"  id="start" style="font-weight: 800;" ondblclick="circle()"> </div>
+              </div>
+               <div class="task  " style="color: red;">Incomplete
+                  <div class="circle " id="incomplete" style="font-weight: 800; " ondblclick="circle2()"> </div>
+              </div>
+               
+ 
+            </div>
+            <div class="mytask">
+              <div class="accordion" id="accordionPanelsStayOpenExample">
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button
+                      class="accordion-button follow head"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#panelsStayOpen-collapseOne"
+                      aria-expanded="true"
+                      aria-controls="panelsStayOpen-collapseOne"
+                    >
+                      My Tasks
+                    </button>
+                  </h2>
+                  <div
+                    id="panelsStayOpen-collapseOne"
+                    class="accordion-collapse collapse show"
+                  >
+                    <div class="accordion-body">
+                      <div class="follow head completed" onclick="completed()">
+                       ✅ Completed 
+                      </div>
+                      <div class="follow tobegin" onclick="active()">
+                       🔄   to begin 
+                      </div>
+                      <div class="follow foot" onclick="callAll()">All</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <h5 class="mt-2"> No Of Events</h5>
+            <div class="div mt-2 d-flex justify-content-evenly  ">
+                      <div class="eventnum1" style="color: orange; font-weight: 700;">Total
+                  <div class="circle " id="totalEvent" style="font-weight: 800; " ondblclick="circle4()"> </div>
+              </div>
+               <div class="eventnum2" style="color: green;  font-weight: 700;">Finished
+                  <div class="circle " id="finishEvent" style="font-weight: 800; " ondblclick="circle5()"> </div>
+              </div>
+               <div class="eventnum3" style="color: red;  font-weight: 700;">Incomplete
+                  <div class="circle " id="incompleteEvent" style="font-weight: 800; " ondblclick="circle6()"> </div>
+              </div>
+
+            </div>
+          </div>
+          
+        </div>
+      </div>
+      <div id="sidebar" class="px-3">
+        <div class="notes">
+          <h3 class="pe-5">To Do List</h3>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="25"
+            height="25"
+            fill="currentColor"
+            class="bi bi-journal-bookmark"
+            viewBox="0 0 16 16"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M6 8V1h1v6.117L8.743 6.07a.5.5 0 0 1 .514 0L11 7.117V1h1v7a.5.5 0 0 1-.757.429L9 7.083 6.757 8.43A.5.5 0 0 1 6 8"
+            />
+            <path
+              d="M3 0h10a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-1h1v1a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v1H1V2a2 2 0 0 1 2-2"
+            />
+            <path
+              d="M1 5v-.5a.5.5 0 0 1 1 0V5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1zm0 3v-.5a.5.5 0 0 1 1 0V8h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1zm0 3v-.5a.5.5 0 0 1 1 0v.5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1z"
+            />
+          </svg>
+        </div>
+        <div class="small" onclick="myday()" id="sun">
+          <h5 class="sun">
+            <svg
+              class="me-2"
+              xmlns="http://www.w3.org/2000/svg"
+              width="22"
+              height="22"
+              fill="currentColor"
+              class="bi bi-brightness-high"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M8 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6m0 1a4 4 0 1 0 0-8 4 4 0 0 0 0 8M8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0m0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13m8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5M3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8m10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0m-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0m9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707M4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708"
+              />
+            </svg>
+            My Day
+          </h5>
+        </div>
+        <div class="small" onclick="planned()">
+          <h5 class="calender">
+            <svg
+              class="me-2"
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              fill="currentColor"
+              class="bi bi-calendar-event"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M11 6.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5z"
+              />
+              <path
+                d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5M1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4z"
+              />
+            </svg>
+            Planned
+          </h5>
+        </div>
+
+        <div class="small" onclick="important()">
+          <h5 class="important">
+            <svg
+              class="me-2"
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              fill="currentColor"
+              class="bi bi-star"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.56.56 0 0 0-.163-.505L1.71 6.745l4.052-.576a.53.53 0 0 0 .393-.288L8 2.223l1.847 3.658a.53.53 0 0 0 .393.288l4.052.575-2.906 2.77a.56.56 0 0 0-.163.506l.694 3.957-3.686-1.894a.5.5 0 0 0-.461 0z"
+              />
+            </svg>
+            Important
+          </h5>
+        </div>
+        <div class="small" onclick="assigned()">
+          <h5 class="Assigned to me">
+            <svg
+              class="me-2"
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              fill="currentColor"
+              class="bi bi-person"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0m4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4m-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10s-3.516.68-4.168 1.332c-.678.678-.83 1.418-.832 1.664z"
+              />
+            </svg>
+            Assigned to me
+          </h5>
+        </div>
+        <div class="small" onclick="home()">
+          <h5 class="home">
+            <svg
+              class="me-2"
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              fill="currentColor"
+              class="bi bi-house"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L2 8.207V13.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V8.207l.646.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293zM13 7.207V13.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V7.207l5-5z"
+              />
+            </svg>
+            Home
+          </h5>
+        </div>
+      </div>
+      <div id="mainbar">
+        <div class="inputBox">
+          <button
+            class="btn btn-primary border-0"
+            type="button"
+            data-bs-toggle="offcanvas"
+            data-bs-target="#offcanvasRight"
+            aria-controls="offcanvasRight"
+            id="create"
+          >
+            <span style="font-weight: 600; color: green">Create +</span>
+          </button>
+
+          <div
+            class="offcanvas offcanvas-end w-75"
+            tabindex="-1"
+            id="offcanvasRight"
+            aria-labelledby="offcanvasRightLabel"
+          >
+            <div class="offcanvas-header">
+              <h5 class="offcanvas-title" id="offcanvasRightLabel">
+                Create your Task
+              </h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="offcanvas"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="offcanvas-body bg-info-subtle">
+              <select id="select">
+                <option value="Task">TASK</option>
+                <option value="event">EVENT</option>
+              </select>
+
+              <div class="taskbox">
+                <input
+                  type="text"
+                  placeholder="Enter a task"
+                  id="input"
+                  required
+                />
+              </div>
+              <div class="subtassks">
+                <div>
+                  <label
+                 
+                  for="sub1"
+                  style=" font-weight: 600;"
+                  >Subtask 1:</label
+                >
+                <input
+                  type="text"
+                  id="sub1"
+                  placeholder="Enter your subtask"
+                  required
+                  class="mb-2 p-1"
+                />
+                </div>
+                <div>
+                <label for="sub2" style="font-weight: 600 " 
+                  >Subtask 2:</label
+                >
+                <input
+                  type="text"
+                  id="sub2"
+                  placeholder="Enter your subtask"
+                  class="mb-2 p-1" 
+                />
+                </div>
+                <div>
+                <label for="sub3" style=" font-weight: 600"
+                  >Subtask 3:</label
+                >
+                <input
+                  type="text"
+                  id="sub3"
+                  placeholder="Enter your subtask"
+                  required
+                  class="mb-2 p-1" 
+                />
+                </div>
+              </div>
+              <div class="assigne">
+                <label for="assigne" style="margin-right: 10px">
+                  Assigne:
+                </label>
+                <input
+                  type="email"
+                  placeholder="ramudukurva@gmail.com"
+                  id="email"
+                />
+              </div>
+              <div class="deadline">
+                <label for="deadline" style="margin-right: 10px">
+                  Deadline:</label
+                >
+                <input type="datetime-local" id="date" />
+              </div>
+
+              <div class="start">
+                <div class="accordion" id="accordionExample">
+                  <div class="accordion-item">
+                    <h2 class="accordion-header">
+                      <button
+                        class="accordion-button"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#collapseOne"
+                        aria-expanded="true"
+                        aria-controls="collapseOne"
+                      >
+                        Deadline timings
+                      </button>
+                    </h2>
+                    <div
+                      id="collapseOne"
+                      class="accordion-collapse collapse show"
+                      data-bs-parent="#accordionExample"
+                    >
+                      <div class="accordion-body">
+                        <label for="start"> Start:</label>
+                        <input type="datetime-local" id="start" />
+                        <label for="finish"> finish:</label>
+                        <input type="datetime-local" id="finish" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <button id="save" type="submit">Save</button>
+              <div id="saveMessage" class="save-message">
+                ✅ Task saved successfully!
+              </div>
+            </div>
+          </div>
+
+          <button id="TaskBtn">
+            <a href="#jsBox" style="font-weight: 600; text-decoration: none"
+              >Task 🔽</a
+            >
+          </button>
+          <button id="eventBtn">
+            <a href="#Events" style="font-weight: 600; text-decoration: none"
+              >Event 📅</a
+            >
+          </button>
+          <div id="time" style="font-weight: 600"></div>
+          <!-- <input type="text" placeholder=" + Add your Task" id="task" />
+          <button id="addBtn">Add</button> -->
+        </div>
+        <div class="jsBox" id="jsBox"></div>
+      </div>
+    </main>
+
+        <H1 style="text-align: center; color: orange;">EVENTS </H1>
+    <div id="evntcontainer" data-aos="zoom-in" data-aos-duration="2000">
+        <div class="Events" id="Events" ></div>
+    </div>
+    <div id="progressDetailsWrapper" style="display: none">
+      <div id="progressDetails"></div>
+    </div>
+
+    <div id="lastBox" >
+      <button id="progress">Get progess</button>
+    </div>
+
+
+
+</div>
+    <script src="./todo.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init();
+</script>
+
+  </body>
+</html>
