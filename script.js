@@ -134,15 +134,9 @@ function display(e) {
         </div>
 
         <div class="subTasks" style="margin-left: 20px" id="subtasks-${i.id}">
-          <label><input type="checkbox" class="subtask-${
-            i.id
-          }" /> <span id="sub1-${i.id}">${i.subTask1}</span></label>
-          <label><input type="checkbox" class="subtask-${
-            i.id
-          }" /> <span id="sub2-${i.id}">${i.subTask2}</span></label>
-          <label><input type="checkbox" class="subtask-${
-            i.id
-          }" /> <span id="sub3-${i.id}">${i.subTask3}</span></label>
+          <label><input type="checkbox" class="subtask-${ i.id}" /> <span id="sub1-${i.id}">${i.subTask1}</span></label>
+          <label><input type="checkbox" class="subtask-${i.id}" /> <span id="sub2-${i.id}">${i.subTask2}</span></label>
+          <label><input type="checkbox" class="subtask-${i.id}" /> <span id="sub3-${i.id}">${i.subTask3}</span></label>
           
           <div class="my-3"><span style="color: orange;">Start's At:</span> <span id="start-${
             i.id
@@ -154,17 +148,11 @@ function display(e) {
             i.id
           }">${i.assigned}</span></div>
 
-          <button onclick="submitTask(${
-            i.id
-          })" style="margin-top: 10px; border-radius:5px;  background-color: #28a745;">Submit</button>
-          <div id="percent-${
-            i.id
-          }" style="margin-top: 10px; font-weight: bold;"></div>
+          <button onclick="submitTask(${i.id})" style="margin-top: 10px; border-radius:5px;  background-color: #28a745;">Submit</button>
+          <div id="percent-${i.id}" style="margin-top: 10px; font-weight: bold;"></div>
         </div>
        
-        <div><span style="color: red;">Deadline:</span> <span id="deadline-${
-          i.id
-        }">${i.deadLine}</span></div>
+        <div><span style="color: red;">Deadline:</span> <span id="deadline-${i.id}">${i.deadLine}</span></div>
       </div>
       
     `;

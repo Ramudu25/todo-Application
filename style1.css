@@ -214,7 +214,7 @@
     position: relative;
   /* background-size: cover; */
   z-index: 1;
-  color: darkorange;
+  /* color: darkorange; */
 background-image: url("https://theconfetti.in/cdn/shop/files/2_af72ddc6-32cb-4fd6-ab07-a7b8f3999466.jpg?v=1725554078&width=1100");
        background-size: cover;
        backdrop-filter: blur(5px);
@@ -328,8 +328,8 @@ background-image: url("https://theconfetti.in/cdn/shop/files/2_af72ddc6-32cb-4fd
   margin-bottom: 0px;
 }
 #save {
-  color: black;
-  background-color: greenyellow;
+  color: white;
+  background-color: rgb(49, 49, 160);
   margin-top: 25px;
   padding: 5px 25px;
   border-radius: 10px;
@@ -560,7 +560,7 @@ background-image: url("https://theconfetti.in/cdn/shop/files/2_af72ddc6-32cb-4fd
   justify-content: space-between;
   flex-wrap: wrap;
   /* border: 2px solid black; */
-  color: darkorange;
+  color: black;
 }
 .subtassks [type="text"] {
   /* padding: px 0px; */
